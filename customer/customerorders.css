@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/home.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #f1f1f1;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.order-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    align-content: center;
+    margin-left: 10px;
+    gap: 200px;
+}
+
+.order-container {
+    background-color: #f1f1f3;
+    border-radius: 50px;
+    padding: 10px;
+    max-width: 1200px;
+    text-align: left;
+    width: 95%;
+}
+.tracking-link {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+    margin-right: 100px;
+    white-space: nowrap;
+}
+
+/* Profile Picture */
+.profile-pic {
+    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
+
+.user-info {
+    font-size: 1rem;
+    background-color: #e9e9e9;
+    width: 400px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+
+.user-info p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.user-info strong {
+    color: #000;
+}
+
+.user-info-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the link act like a block element */
+}
+
+.order-history-container {
+    background-color: #f1f1f3;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    max-height: 500px; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+}
+
+/* Station Header */
+.station-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    margin-top: 20px;
+}
+.station-group {
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Order Items Container */
+.order-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #3dbfea;
+}
+
+/* Each order-item should align horizontally with product and payment method */
+.order-item {
+    display: flex; /* Align product and payment method horizontally */
+    flex-direction: column; /* Stack product and payment method vertically */
+    align-items: center; /* Vertically center the items */
+    gap: 5px; /* Space between product and payment method */
+    width: calc(33.33% - 25px); /* Each item takes up 1/3 width of the container */
+    min-width: 150px; /* Ensure no smaller than this width */
+    box-sizing: border-box; /* Prevents overflow due to padding */
+}
+
+
+.view-all-container {
+    text-align: right; /* Align the button to the right */
+    margin-top: 10px; /* Add space above the button */
+    margin-left: 760px;
+}
+
+.view-all-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #003f67; /* Button background color */
+    border: 1px solid gray; /* Button border */
+    border-radius: 5px; /* Rounded corners */
+}
+.view-all-link:hover {
+    color: rgb(13, 36, 105); /* Darker blue on hover */
+}
+
+/* Show the View All button only if there are more than 3 items */
+.show-view-all .view-all-btn {
+    display: block;
+}
+
+/* Styling for each order-item-list */
+.order-item-list {
+    display: flex; /* Display the contents (image and details) horizontally */
+    align-items: center; /* Vertically center the items */
+    gap: 15px; /* Space between the image and details */
+    padding: 10px;
+    flex: 1; /* Allows items to grow and shrink based on available space */
+    min-width: 300px; /* Optional: Set a minimum width for each item */
+}
+
+/* Styling for the order image */
+.order-image {
+    width: 80px; /* Fixed width */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 40px;
+}
+
+.order-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+}
+
+/* Styling for the order details */
+.order-details {
+    align-items: flex-start;
+    align-content: flex-start;
+    flex: 1; /* Takes up the remaining space */
+    font-size: 10px;
+}
+
+/* Optional: Spacing between product details */
+.order-details p {
+    font-size: 5px;
+    display: flex;
+    text-align: left;
+    margin: 5px 0;
+}
+
+/* Style for Order Status */
+.order-status {
+    font-weight: bold; /* Make the order status text bold */
+}
+
+.order-status:before {
+    content: "Status: "; /* Prefix text for status */
+    font-weight: normal;
+    color: #444; /* Darker color for the prefix */
+}
+
+/* Style for No image available text */
+.order-image p em {
+    font-style: italic;
+    color: #888; /* Light gray color for "No image available" text */
+}
+
+/* Styling for the No orders found message */
+.order-history-container p {
+    text-align: center;
+    font-size: 1.2em;
+    color: black;
+}
+
+.product-name {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+}
+
+.price-label {
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;  /* Adds space between the label and the price value */
+}
+
+.price-value {
+    font-size: 1rem;
+    color: #28a745;
+}
+
+.Quantity {
+    margin-right: 5px;  /* Adds space between the label and the quantity value */
+}
+
+.quantity-value {
+    font-size: 1.1em;
+    color: #000;  /* Customize the color for the quantity value if needed */
+}
+
+.payment-method {
+    font-weight: bold;
+    font-size: 13px;
+    color: white;
+    flex-direction: row; /* Aligns product items horizontally */
+    margin-left:280px;
+}
+
+.order-info {
+    width: 100%;  /* Let it take up the full available width */
+    min-height: 40px; /* Ensure it's visible */
+    max-height: 100px; /* Prevents it from growing too large */
+    margin-top: 10px;
+    display: flex;
+    background-color: #ecfbff;  /* Light grey background color */
+    padding: 10px;  /* Adds space around the content */
+    border-radius: 20px;  /* Optional: Adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Optional: Adds a subtle shadow */
+    align-items: flex-start;
+    justify-content:center /* Optional: Adjust if needed */
+}
+
+
+.order-info h3.order-date {
+    margin-top: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;  /* Adds space between the date and the order status */
+    color: #333;  /* Optional: Adjusts the color of the order date */
+}
+
+.order-info .order-status {
+    background-color: #ecfbff;
+    font-weight: bold;
+    font-size: 30px;  /* Makes the status text slightly larger */
+    color: #555;  /* Adjusts the color of the status text */
+}
+
+.order-info .order-status strong {
+    color: #000;  /* Makes the "Status:" label bold and dark */
+}
+
+.status {
+    margin-left: 5px;
+}
+
+/* General Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    max-height: 600px;
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    flex-direction: column; /* Stack items vertically */
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white; /* White background for the modal */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; /* Centers modal content */
+}
+
+.modal h2 {
+    margin-top: 0; /* Remove margin-top from the modal heading */
+    font-size: 2em;
+}
+
+/* Close Button */
+.close-btn {
+    background-color: #ff5f57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.close-btn:hover {
+    background-color: #ff4e47;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .order-header {
+        gap: 50px; /* Reduce gap for medium screens */
+    }
+
+    .order-container {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 28px; /* Smaller title font */
+        margin-right: 20px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .user-info {
+        width: 350px;
+        font-size: 0.9rem;
+    }
+
+    .order-items-container {
+        gap: 50px; /* Reduced gap for medium screens */
+    }
+
+    .order-item-list {
+        min-width: 200px;
+    }
+
+    .order-image {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .order-header {
+        gap: 50px; /* Reduce gap for medium screens */
+    }
+
+    .order-container {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 28px; /* Smaller title font */
+        margin-right: 20px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .user-info {
+        width: 350px;
+        font-size: 0.9rem;
+    }
+
+    .order-items-container {
+        gap: 50px; /* Reduced gap for medium screens */
+    }
+
+    .order-item-list {
+        min-width: 200px;
+    }
+
+    .order-image {
+        width: 60px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .order-header {
+        flex-direction: column;
+        gap: 10px;
+        font-size:1.5rem; /* Adjust font size for better visibility on small screens */
+    }
+
+    h1 {
+        font-size: 30px; /* Increase font size of the header title */
+    }
+
+    h2 {
+        font-size: 20px; /* Increase font size of the header title */
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-info {
+        width: 100%;
+        font-size: 0.7rem;
+    }
+
+    .order-items-container {
+        gap: 10px;
+    }
+
+    .order-item-list {
+        flex: 1 1 100%; /* Full width per item on small screens */
+    }
+
+    .order-image {
+        width: 50px;
+        margin-right: 8px;
+    }
+    .order-item {
+        width: 85%; /* Full width per item on very small screens */
+    }
+
+    .order-items-container {
+        gap: 1px; /* Reduced gap for mobile */
+    }
+
+    .station-group{
+        font-size: 1rem;
+    }
+    .payment-method {
+        display: flex;
+        justify-content: center; /* Horizontally center the content */
+        align-items: center; /* Vertically center the content */
+        text-align: center; /* Align text inside the element */
+        flex-direction: column; /* Stack items vertically */
+        margin: 0 auto; /* Center the container itself */
+        height: auto; /* Allow content to determine the height */
+    }
+
+    .payment-method p {
+        margin: 0; /* Remove default paragraph margin */
+        padding-top: 1px; /* Add vertical spacing without line spacing */
+    }
+
+    .payment-method p:first-child {
+        padding-top: 0; /* Remove top padding for the first paragraph */
+    }
+    .view-all-container {
+        text-align: right; /* Align the button to the right */
+        margin-top: 10px; /* Add space above the button */
+        margin-left: 100px;
+    }
+}
+   /* Modal Overlay */
+   .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: transparent; /* No background color */
+}
+
+.modal-content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+    width: 90%;
+    padding: 20px;
+    background-color: rgb(228, 228, 228);
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: transparent; /* Remove the background box */
+    border: none; /* Remove the border */
+    color: black; /* Set the color to black */
+    padding: 0; /* Remove the padding */
+  }
+  
+  
+.order-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.order-image img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Hide scrollbar for modern browsers */
+.modal-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+/* Mobile View - Adjust Modal and Content */
+@media screen and (max-width: 480px) {
+    .modal-content {
+      max-width: 85%;
+      width: 80%;
+      max-height: 70vh;
+      padding: 5px;
+      top: 70%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .close-btn {
+      font-size: 18px;
+      top: 5px;
+      right: 7px;
+    }
+  
+    .order-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  
+    .order-image img {
+      width: 60px;
+      height: 60px;
+    }
+  }

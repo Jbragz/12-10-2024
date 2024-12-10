@@ -1,0 +1,348 @@
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+    body {
+        font-family: 'Fredoka', sans-serif;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: url('image/home.png') no-repeat center center;
+        background-size: cover;  /* Ensure the image covers the entire body */
+        background-attachment: fixed;  /* Make the background image fixed */
+        background-color: #f1f1f1;  /* Fallback color */
+        min-height: 100vh;  /* Ensures the body takes up the full height of the viewport */
+        overflow: auto;
+    }
+
+    .profile-pic {
+        border-radius: 50%;
+        width: 190px;
+        height: 190px;
+        object-fit: cover;
+    }
+
+
+    .tracking-container {
+        max-width: 1000px; /* Adjust as needed */
+        height: 600px; /* Keep it responsive */
+        margin: 0 auto; /* Center horizontally */
+        padding: 20px;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        display: flex;
+        flex-direction: column; /* Align children vertically */
+        gap: 20px; /* Add spacing between children */
+        border: 1px solid #ccc; /* Optional: Add a border for visual clarity */
+        background-color: #f1f1f3; /* Ensure content stands out */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+
+    }
+
+       /* General container for the details */
+.tracking-header {
+    text-align: center; /* Center align the content */
+    margin-bottom: 5px; /* Space below the section */
+    padding: 15px; /* Add padding for spacing */
+    background-color: #f1f1f3; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    margin-top: -20px;
+}
+
+/* Style for the heading */
+.tracking-header h1 {
+    font-size: 2em; /* Large font size */
+    font-weight: bold;
+    color: #333; /* Dark gray for good contrast */
+    margin-bottom: 10px; /* Space between the heading and details */
+    font-family: 'Fredoka', Arial, sans-serif;
+    margin-top: -15px;
+    margin-bottom: 0;
+}
+
+.tracking-header .station-name{
+    font-size: 30px;
+}
+
+/* Style for the tracking number */
+.tracking-header .tracking-number {
+    display: inline-block; /* Ensure it aligns neatly with the label */
+    font-size: 1.5em; /* Slightly larger font size for emphasis */
+    color: #45c0ff; /* Use a distinct color to highlight */
+    font-weight: bold; /* Make it stand out */
+    background-color: #e6f2ff; /* Light blue background for visibility */
+    padding: 3px 8px; /* Add some padding for better spacing */
+    border-radius: 4px; /* Rounded corners for a softer look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    margin-top: 3px;
+}
+
+.tracking-number{
+    display: flex;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+
+
+/* Style for the details */
+.tracking-header p {
+    text-align: left;
+    font-size: 1em; /* Standard font size */
+    color: black;
+    margin: 5px 0; /* Space between lines */
+}
+
+/* Emphasize the labels (Station, Date, Tracking Number) */
+.tracking-header p strong {
+    color: #000; /* Bold black for emphasis */
+    font-weight: bold;
+}
+
+.step-wizard {
+    height: 90vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 250px;
+    margin-top: -65px;
+}
+
+.step-wizard-list {
+    background: #f1f1f3;
+    color: #333;
+    list-style-type: none;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.step-wizard-item {
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 130px;
+    position: relative;
+}
+
+.step-wizard-item+.step-wizard-item:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background: #003f67;
+    width: 100%;
+    height: 3px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+.progress-count {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    color: transparent;
+}
+
+.progress-count:after {
+    content: "";
+    height: 40px;
+    width: 40px;
+    background: #21d4fd;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+
+.progress-count:before {
+    content: "";
+    height: 10px;
+    width: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+
+.progress-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.current-item .progress-count:before,
+.current-item~.step-wizard-item .progress-count:before {
+    display: none;
+}
+
+.current-item~.step-wizard-item .progress-count:after {
+    height: 10px;
+    width: 10px;
+}
+
+.current-item~.step-wizard-item .progress-label {
+    opacity: 0.5;
+}
+
+.current-item .progress-count:after {
+    background: #fff;
+    border: 2px solid #21d4fd;
+}
+
+.current-item .progress-count {
+    color: #21d4fd;
+}
+
+    .tracking-item-container {
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 50px;
+        margin-top: -60px;
+        background-color: #3dbfea;
+        margin-bottom: 50px;
+    }
+
+    .tracking-item-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 12px; /* Spacing between items */
+    max-width: 100%;
+    padding: 10px;
+    background-color: #3dbfea;
+    border-radius: 10px;
+    max-height: 180px;
+    overflow-y: auto;
+        
+    }
+
+    .tracking-item {
+        display: flex; /* Enable flexbox for layout */
+        max-width: 300px;
+        align-items: flex-start; /* Align items at the top */
+        gap: 20px; /* Add spacing between image and details */
+        background-color: #3dbfea;
+        border-radius: 30px;
+        padding: 10px;
+        flex: 1;
+    }
+
+    .tracking-item img {
+        margin-top: 30px;
+        display: flex;
+        align-content: center;
+        align-content: center;
+        width: 80px; /* Set a fixed width for the image */
+        height: 80px; /* Set a fixed height for the image */
+        object-fit: cover; /* Ensure the image is not distorted */
+        border-radius: 8px; /* Optional: Add rounded corners */
+    }
+
+    .product-details {
+        flex: 1; /* Allow details to take up remaining space */
+        display: flex;
+        flex-direction: column; /* Stack details vertically */
+    }
+
+    .tracking-item p {
+        margin: 2px;
+        font-size: 14px;
+    }
+
+    .tracking-item strong {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .tracking-item-list::-webkit-scrollbar{
+        display: none;
+    }
+
+    .price{
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .price-value{
+        color: #009638;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .payments {
+        max-width: 400px; /* Limit width for readability */
+        text-align: center; /* Align text to the left */
+        font-family: 'Fredoka', sans-serif; /* Consistent typography */
+        font-size: 16px; /* Comfortable font size */
+        margin-left: 300px;
+        margin-top: 2px;
+    }
+    
+    .payments p {
+        margin: 1px; /* Space between paragraphs */
+        line-height: 1.5; /* Improve readability */
+        text-align: center;
+    }
+
+    .payment-method{
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .total-price-value{
+        color: #009638;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    .product-type{
+        color: #999494;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /* Style for the Buy Now button */
+.done {
+    margin-top: -50px;
+    margin-left: 800px;
+    width: 200px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    background-color: #88d8df; /* Green background */
+    padding: 10px 20px; /* Vertical and horizontal padding */
+    border: none; /* Remove default border */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 24px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+.done:hover {
+    background-color: #003f67; /* Darker green on hover */
+    color: white;
+}

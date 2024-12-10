@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/home.png') no-repeat center center;
+    background-size: cover;  /* Ensure the image covers the entire body */
+    background-attachment: fixed;  /* Make the background image fixed */
+    background-color: #f1f1f1;  /* Fallback color */
+    min-height: 100vh;  /* Ensures the body takes up the full height of the viewport */
+    overflow: auto;
+}
+
+.profile-container {
+    width: 50%;
+    margin: auto;
+    background-color: #76c7f3;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.profile-pic-container {
+    position: relative; /* Allows positioning of child elements */
+    display: inline-block; /* Ensure the profile picture and plus button are aligned properly */
+    margin-bottom: 0px; /* Space below */
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
+
+#profile_image {
+    margin-top: 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+    text-align: right;
+    align-items: center; /* Center everything horizontally */
+}
+
+.profile-info label {
+    font-weight: bold;
+    color: white;
+    margin-right: 10px; /* Add some space between the label and input */
+    text-align: left;
+    width: 45%; /* Make sure the label has a fixed width */
+}
+
+.profile-info input {
+    font-family: 'Fredoka', sans-serif;
+    width: 50%;
+    padding: 10px;
+    border-radius: 30px;
+    border: 2px solid #76c7f3;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.custom-file-upload {
+    position: absolute;
+    top: 40%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Ensure perfect centering */
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    color: gray; /* Color of the plus sign */
+    cursor: pointer; /* Change cursor to pointer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make the plus button circular */
+}
+
+.plus-sign {
+    font-weight: 100; /* Increase the boldness */
+    font-size: 90px; /* Adjust the size of the plus sign */
+    line-height: 10; /* Ensure the plus sign is vertically centered */
+}
+
+#file_name {
+    margin-top: 5px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%;
+    }
+}
+
+.update-btn {
+    font-family: 'Fredoka', sans-serif;
+    display: block;
+    width: 15%;
+    padding: 10px;
+    font-weight: bold;
+    background-color: #fff;
+    color: #76c7f3;
+    border: none;
+    border-radius: 30px;
+    font-weight: 900;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.update-btn:hover {
+    background-color: #e3f0fa;
+}
+
+.update-text {
+    position: absolute;
+    top: 50%; /* Vertically center relative to the profile picture */
+    right: -260px; /* Position the text towards the right side */
+    transform: translateY(-50%); /* Ensure perfect vertical centering */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+    font-size: 30px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #39cbf3;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}

@@ -1,0 +1,490 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('image/home.png') no-repeat center center;
+    background-size: cover;  /* Ensure the image covers the entire body */
+    background-attachment: fixed;  /* Make the background image fixed */
+    background-color: #f1f1f1;  /* Fallback color */
+    min-height: 100vh;  /* Ensures the body takes up the full height of the viewport */
+    overflow: auto;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
+
+/* Wishlist Container */
+.container {
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 90%;
+    position: relative;
+    height: auto; /* Allow dynamic height */
+    min-height: 600px; /* Ensures it takes at least the specified height */
+    overflow: hidden; /* Prevent overflow from content */
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2{ 
+    margin-left: 0;  /* Removes any left margin */
+    padding-left: 0; /* Removes any left padding */
+    font-size: 2.0rem; /* Adjust font size for visibility */
+    color: #333; /* Optional: Add a distinct color for station names */
+    text-align: left; /* Aligns the text to the left */
+}
+
+
+/* Station Name */
+.container h2 {
+    font-size: 2.0rem; /* Adjust font size for visibility */
+    color: #333; /* Optional: Add a distinct color for station names */
+}
+
+/* Product container for wrapping items */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next row if needed */
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: flex-start;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-height: 380px; /* Allow height to adjust automatically */
+    overflow-y: auto; /* Allows vertical scrolling if the content exceeds the container height */
+}
+
+/* Hide scrollbar for modern browsers */
+.product-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+
+/* Wishlist List - 3 columns */
+.wishlist-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 10px;
+    justify-items: center;
+    align-items: stretch;
+    max-width: 100%;
+}
+
+/* Wishlist Item */
+.wishlist-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex: 1 1 calc(100% - 15px);
+    max-width: calc(100% - 15px);
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Wishlist Item Box */
+.wishlist-item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: white;
+    max-width: 250px;
+    position: relative;
+    height: auto; /* Allow the height to adjust depending on content */
+    overflow: hidden;
+}
+
+/* Positioning the Checkbox */
+.wishlist-item input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform: scale(1.2);  /* Slightly scale up the checkbox size for better visibility */
+    z-index: 10; /* Ensure the checkbox is above other content */
+}
+
+
+/* Product Image */
+.wishlist-image img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+/* Product Details */
+.wishlist-details {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 180px; /* Adjust based on your layout */
+    white-space: normal;
+    padding: 10px;
+}
+
+/* Specifically for the product name */
+.wishlist-details .product-name {
+    font-size: 14px;
+    line-height: 1.4; /* Set the line-height higher for better spacing for product name */
+    display: block;
+    margin-bottom: 5px; /* Adds a small gap after the product name */
+}
+/* Specifically for price and other details */
+.wishlist-details .details {
+    font-size: 12px;
+    line-height: 1.2;
+    display: block;
+    margin-top: 5px;
+}
+
+.wishlist-checkbox {
+    margin-left: 15px;
+}
+
+.wishlist-checkbox input {
+    transform: scale(1.5);
+}
+
+/* Product Image */
+.wishlist-image img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Product Details */
+.wishlist-details h2 {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    word-wrap: break-word;
+}
+
+.wishlist-details p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;  /* Removed margin to bring the price closer to the product name */
+    line-height: 1.2;
+    margin-top: -5px; /* Adjusted the margin-top to pull the price closer to the product name */
+}
+
+.wishlist-details strong {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Remove Link */
+.remove-link {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 12px;
+}
+
+/* Flex container to adjust the quantity and image container */
+.quantity-container {
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.quantity-input {
+    width: 100px; /* Set a wider width to accommodate the buttons */
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 5px; /* Create a rounded background */
+    text-align: left;
+    font-size: 18px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    position: relative;
+    box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+.quantity-input:focus {
+    border-color: #0000; /* Highlight border when focused */
+}
+
+.quantity-btn-group {
+    display: flex;
+    flex-direction: left; /* Stack buttons vertically */
+    gap: 5px; /* Space between buttons */
+}
+
+.quantity-btn {
+    position: absolute;
+    width: 30px; /* Ensure width and height match the button's background */
+    height: 30px;
+    background-color: #f9f9f9; /* Background of the buttons */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular buttons */
+    font-size: 16px; /* Font size for the symbols */
+    font-weight: bold; /* Bold for emphasis */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    top: 50%; /* Position at the vertical center */
+    transform: translateY(-50%); /* Correct vertical alignment */
+}
+
+/* Positioning the buttons inside the input */
+.quantity-btn.decrement {
+    left: 100px; /* Position on the left side */
+}
+
+.quantity-btn.increment {
+    right: 5px; /* Position on the right side */
+}
+
+.quantity-btn:active {
+    transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Hide spinners for number input in Chrome, Edge, and Safari */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #fff; /* Optional: For background to distinguish the buttons */
+    text-align: right; /* Align text and buttons to the right */
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+/* Disabled Button Style for .add-to-cart and .buy-now */
+.add-to-cart:disabled, .buy-now:disabled {
+    background-color: #dcdcdc;  /* Light gray */
+    cursor: not-allowed;
+    color: #888;  /* Gray text */
+}
+
+.total-price-action-container {
+    display: flex; /* Aligns items horizontally */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center the content */
+    gap: 5px; /* Adds space between the total price and buttons */
+    margin-bottom: 10px; /* Optional: Adds space below the buttons */
+}
+
+/* Total Price Container */
+.total-price-container {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0; /* Remove extra space below total price */
+}
+
+/* Remove margins and reduce padding for the buttons */
+.add-to-cart,
+.buy-now {
+    margin: 0; /* Remove any margin */
+    padding: 10px 20px; /* Adjust padding if needed */
+}
+
+/* Optional: If you want no gap between buttons, ensure no padding is set in-between */
+.add-to-cart + .buy-now {
+    margin-left: 0; /* Remove space between the two buttons */
+}
+
+button.add-to-cart {
+    background: #88d8df;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+}
+
+button.add-to-cart:hover {
+    background: #003f67;
+    color: white;
+}
+
+button.buy-now {
+    background: #88d8df;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+}
+
+button.buy-now:hover {
+    background: #003f67;
+    color: white;
+}
+
+/* Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+    .wishlist-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        gap: 8px; /* Reduce gap between items on medium screens */
+    }
+
+    .wishlist-item-box {
+        max-width: 220px; /* Slightly reduced max-width for smaller screens */
+    }
+
+    .container {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wishlist-list {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+        gap: 8px; /* Reduce gap between items on small screens */
+    }
+
+    .wishlist-item-box {
+        max-width: 180px; /* Further reduce max-width for small screens */
+    }
+}
+
+.wishlist-header {
+    display: flex;
+    justify-content: space-between; /* Aligns the title and button on opposite sides */
+    align-items: center; /* Ensures vertical alignment */
+    margin-bottom: 20px;
+}
+
+/* Wishlist Heading */
+.wishlist-header h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 2.5rem; /* Default font size for larger screens */
+}
+
+/* Remove Button */
+.remove-btn-container {
+    position: absolute;
+    top: 20px;  /* Aligns the button to the top */
+    right: 20px; /* Aligns the button to the right */
+}
+
+#remove-btn {
+    background: none; /* Removes background */
+    border: none; /* Removes border */
+    color: black; /* Blue color for the text */
+    font-size: 25px; /* Set font size */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold; /* Bold font */
+    font-family: 'Fredoka', sans-serif;
+}
+
+#remove-btn:hover {
+    color: #0056b3; /* Darkens the color when hovered */
+}
+
+/* Hide scrollbar for modern browsers */
+.product-list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+
+/* Adjust font size for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .wishlist-header h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Adjust font size for mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .wishlist-header h1 {
+        font-size: 2.5rem; /* Adjust font size even smaller for very small screens */
+    }
+}
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal-body {
+    margin-top: 10px;
+    font-size: 16px;
+}
